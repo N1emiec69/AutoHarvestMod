@@ -8,14 +8,14 @@ import net.minecraft.screen.slot.SlotActionType;
 import java.util.ArrayList;
 
 public class TaskManager {
-    private ArrayList<Line> taskList = new ArrayList();
+    private final ArrayList<Line> taskList = new ArrayList<>();
 
     enum Commands {
         MOVEITEM,
         SKIPTICK
     }
 
-    class Line {
+    static class Line {
         public Line(Commands command, Object... args) {
             Command = command;
             Args = args;
@@ -29,10 +29,6 @@ public class TaskManager {
         taskList.add(new Line(Commands.MOVEITEM, slotNumber, currentHotbarSlot));
     }
 
-    public void Add_TickSkip() {
-        Add_TickSkip(1);
-    }
-
     public void Add_TickSkip(int skipTick) {
         for (int i = 0; i < skipTick; i++)
             taskList.add(new Line(Commands.SKIPTICK));
@@ -42,14 +38,6 @@ public class TaskManager {
         return taskList.size();
     }
 
-    public void Clean() {
-        taskList.clear();
-    }
-
-    public boolean Remove(int index) {
-        return taskList.remove(index) != null;
-    }
-
     public void RunATask() {
         if (taskList.size() == 0)
             return;
@@ -57,10 +45,12 @@ public class TaskManager {
         switch (line.Command) {
             case MOVEITEM:
                 MinecraftClient mc = MinecraftClient.getInstance();
+                assert mc.player != null;
                 PlayerScreenHandler container = mc.player.playerScreenHandler;
                 if ((int) line.Args[0] < 9) {
-                    MinecraftClient.getInstance().player.inventory.selectedSlot = (int) line.Args[0];
+                    MinecraftClient.getInstance().player.getInventory().selectedSlot = (int) line.Args[0];
                 } else {
+                    assert mc.interactionManager != null;
                     mc.interactionManager.clickSlot(container.syncId, (int) line.Args[0], (int) line.Args[1], SlotActionType.SWAP, mc.player);
                 }
                 break;
