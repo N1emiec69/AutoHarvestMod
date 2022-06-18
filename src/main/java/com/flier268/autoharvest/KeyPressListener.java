@@ -1,13 +1,15 @@
 package com.flier268.autoharvest;
 
+import org.lwjgl.glfw.GLFW;
+
 import com.flier268.autoharvest.Plugin.ClothConfig;
+
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.TranslatableText;
-import org.lwjgl.glfw.GLFW;
+import net.minecraft.text.Text;
 
 public class KeyPressListener {
 
@@ -23,8 +25,8 @@ public class KeyPressListener {
     private final KeyBinding Key_BONEMEALING;
 
     public KeyPressListener() {
-        String categoryGeneral = new TranslatableText("key.category.general").getString();
-        String categorySwitchTo = new TranslatableText("key.category.switchTo").getString();
+        String categoryGeneral = Text.translatable("key.category.general").getString();
+        String categorySwitchTo = Text.translatable("key.category.switchTo").getString();
         key_ModeChange = new KeyBinding("key.general.modechange",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_H,
@@ -112,7 +114,7 @@ public class KeyPressListener {
                 modeName = AutoHarvest.instance.toSpecifiedMode(AutoHarvest.HarvestMode.BONEMEALING).toString().toLowerCase();
             }
             if (modeName != null)
-                AutoHarvest.msg("notify.switch_to", new TranslatableText(modeName).getString());
+                AutoHarvest.msg("notify.switch_to", Text.translatable(modeName).getString());
         }
     }
 }

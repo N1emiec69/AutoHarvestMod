@@ -119,7 +119,7 @@ public class TickListener {
                                     false);
                             assert MinecraftClient.getInstance().interactionManager != null;
                             MinecraftClient.getInstance().interactionManager.interactBlock(p,
-                                    MinecraftClient.getInstance().world, Hand.MAIN_HAND, blockHitResult);
+                                    Hand.MAIN_HAND, blockHitResult);
 
                         } else {
                             assert MinecraftClient.getInstance().interactionManager != null;
@@ -216,7 +216,7 @@ public class TickListener {
                     lastUsedItem = handItem.copy();
                     assert MinecraftClient.getInstance().interactionManager != null;
                     MinecraftClient.getInstance().interactionManager.interactBlock(MinecraftClient.getInstance().player,
-                            MinecraftClient.getInstance().world, Hand.MAIN_HAND, blockHitResult);
+                        Hand.MAIN_HAND, blockHitResult);
                     minusOneInHand();
                     return;
                 }
@@ -247,8 +247,7 @@ public class TickListener {
                                     new Vec3d(X + deltaX + 1, Y + deltaY + 0.5, Z + deltaZ + 0.5), tmpFace, pos, false);
                             assert MinecraftClient.getInstance().interactionManager != null;
                             MinecraftClient.getInstance().interactionManager.interactBlock(
-                                    MinecraftClient.getInstance().player, MinecraftClient.getInstance().world,
-                                    Hand.MAIN_HAND, blockHitResult);
+                                    MinecraftClient.getInstance().player, Hand.MAIN_HAND, blockHitResult);
                             minusOneInHand();
                             return;
                         }
@@ -261,8 +260,7 @@ public class TickListener {
                                     new Vec3d(X + deltaX, Y + deltaY + 0.5, Z + deltaZ + 0.5), tmpFace, pos, false);
                             assert MinecraftClient.getInstance().interactionManager != null;
                             MinecraftClient.getInstance().interactionManager.interactBlock(
-                                    MinecraftClient.getInstance().player, MinecraftClient.getInstance().world,
-                                    Hand.MAIN_HAND, blockHitResult);
+                                    MinecraftClient.getInstance().player, Hand.MAIN_HAND, blockHitResult);
                             minusOneInHand();
                             return;
                         }
@@ -275,8 +273,7 @@ public class TickListener {
                                     new Vec3d(X + deltaX + 0.5, Y + deltaY + 0.5, Z + deltaZ + 1), tmpFace, pos, false);
                             assert MinecraftClient.getInstance().interactionManager != null;
                             MinecraftClient.getInstance().interactionManager.interactBlock(
-                                    MinecraftClient.getInstance().player, MinecraftClient.getInstance().world,
-                                    Hand.MAIN_HAND, blockHitResult);
+                                    MinecraftClient.getInstance().player, Hand.MAIN_HAND, blockHitResult);
                             minusOneInHand();
                             return;
                         }
@@ -289,8 +286,7 @@ public class TickListener {
                                     new Vec3d(X + deltaX + 0.5, Y + deltaY + 0.5, Z + deltaZ), tmpFace, pos, false);
                             assert MinecraftClient.getInstance().interactionManager != null;
                             MinecraftClient.getInstance().interactionManager.interactBlock(
-                                    MinecraftClient.getInstance().player, MinecraftClient.getInstance().world,
-                                    Hand.MAIN_HAND, blockHitResult);
+                                    MinecraftClient.getInstance().player, Hand.MAIN_HAND, blockHitResult);
                             minusOneInHand();
                             return;
                         }
@@ -382,7 +378,6 @@ public class TickListener {
                     assert MinecraftClient.getInstance().interactionManager != null;
                     MinecraftClient.getInstance().interactionManager.interactItem(
                             p,
-                            MinecraftClient.getInstance().world,
                             Hand.MAIN_HAND);
                 }
 
@@ -391,7 +386,6 @@ public class TickListener {
                     assert MinecraftClient.getInstance().interactionManager != null;
                     MinecraftClient.getInstance().interactionManager.interactItem(
                             p,
-                            MinecraftClient.getInstance().world,
                             Hand.MAIN_HAND);
                     fishBitesAt = 0;
                 }
@@ -427,8 +421,7 @@ public class TickListener {
                             lastUsedItem = handItem.copy();
                             assert MinecraftClient.getInstance().interactionManager != null;
                             MinecraftClient.getInstance().interactionManager.interactBlock(
-                                    MinecraftClient.getInstance().player, MinecraftClient.getInstance().world,
-                                    Hand.MAIN_HAND, blockHitResult);
+                                    MinecraftClient.getInstance().player, Hand.MAIN_HAND, blockHitResult);
                             minusOneInHand();
                             return;
                         }
