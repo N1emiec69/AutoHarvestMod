@@ -21,7 +21,7 @@ public class Configure {
     public Effect_radius effect_radius = new Effect_radius();
 
     public static class Effect_radius {
-        public int value = 3;
+        public int value = 4;
         private String name = "effect_radius";
         public static final int Max = 3;
         public static final int Min = 0;
@@ -32,7 +32,7 @@ public class Configure {
     public static class TickSkip {
         public int value = 0;
         private String name = "tick_skip";
-        public static final int Max = 100;
+        public static final int Max = 30;
         public static final int Min = 0;
     }
 
