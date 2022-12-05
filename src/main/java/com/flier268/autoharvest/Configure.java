@@ -23,7 +23,7 @@ public class Configure {
     public static class Effect_radius {
         public int value = 4;
         private String name = "effect_radius";
-        public static final int Max = 3;
+        public static final int Max = 4;
         public static final int Min = 0;
     }
 
